@@ -28,7 +28,7 @@ heading.style.textAlign = "center";
 // Change the font size of the heading to 3rem.
 heading.style.fontSize = "3rem";
 // Change the border of hr with class 'image' to `2px solid purple`.
-allHrsArray.forEach(element =>  element.setAttribute("class", "image"));
+document.querySelectorAll('hr.image').forEach(elem => elem.style.border="2px solid black")
 // Hide the box number 17 (last box).
 let seventeen = document.querySelector(".seventeen")
 seventeen.style.display = "none";
@@ -39,7 +39,8 @@ let para = document.createElement('p');
 // Change the inner text of para to "querySelector returns an element you can maupulate but querySelectorAll returns the collection of elements in array kind of structure."
 para.innerText = "It is a first box"
 // Remove all the elements from box 1
-document.querySelector('.one').querySelectorAll('hr').forEach(element => element.remove())
+let boxOne = document.querySelector('.one');
+boxOne.innerHTML = "";
 // Replace all the elements inside box 1 with the para (you created above)
 document.querySelector('.one').append(para);
 /* Walking the DOM
