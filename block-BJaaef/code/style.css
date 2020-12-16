@@ -20,7 +20,7 @@ html{
   display: flex;
 }
 .justify-between{
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .align-center{
   align-items: center;
