@@ -22,6 +22,12 @@ createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></
 // 2. Do the same thing as above using string literal like `<h1>Hello</h1>`
 
 // Your code goes here
+function createInputElm(label , type = "text") {
+  let html = `
+      <lable>${label}: <input type=${type}> </lable>
+  `
+  return html;
+}
 
 // TEST
 createInputElm('Your name'); //<label>Your name: <input type="text"></label>
@@ -30,14 +36,13 @@ createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></
 // 3. Create a function named `createList` that accept and array of data like ['Mango', 'Apple', 'Banana'] and returns
 // the html for the link like <ul> <li>Mango</li>  <li>Apple</li>  <li>Banana</li> </ul>
 // Your code goes here
-function createList(array) {
-  let ul = document.createElement('ul');
-  array.forEach(element => {
-    let li = document.createElement('li');
-    li.innerText = element;
-    ul.append(li);
-  });
-  return ul;
+function createList(array = []) {
+   let html =  `
+    <ul>
+    ${array.map(element => `<li>${element}</li>`).join("")}
+    </ul>;
+   `
+   return html;
 }
 // TEST
 createList(['ALABAMA', 'ALASKA', 'HAWAII', 'KENTUCKY']);
@@ -57,19 +62,17 @@ createList(['Afghanistan', 'Antarctica', 'Congo', 'Estonia']);
 
 // Your code goes here
 function createTodoList(array) {
-  let ul = document.createElement('ul');
-  array.forEach(element => {
-    let li = document.createElement('li');
-    let p  = document.createElement('p');
-    p.innerText = element.name ;
-    let input =  document.createElement('input');
-    input.setAttribute('id', " ");
-    let span  = document.createElement('span');
-    span.innerText= "*"
-    li.append(p,input,span)
-    ul.append(li)
-  } )
-  return ul;
+  let html = `
+    <ul>
+      ${array.map(element => `
+      <li>
+        <p>${element.name}</p>
+        <input type="checkbox" ${isDone ? "checked" : ""} name="" id="">
+        <span>X</span>
+      </li>`).join("")}
+    </ul>
+  `
+  return html;
 }
 // TEST
 createTodoList([
