@@ -79,7 +79,7 @@ html{
 }
 
 .flex-32{
-    flex: 0 1 32%;
+    flex: 0 1 32.5%;
 }
 .flex-wrap{
     flex-wrap: wrap;
