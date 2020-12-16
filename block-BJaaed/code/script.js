@@ -5,7 +5,7 @@ console.log(blogs)
 let html = `
 ${blogs.books.map(element => 
     `
-    <article class="flex-32 article">
+    <article class="flex-32 align-center article">
         <img src= ${element.image}  class="img" alt="">
         <h2>${element.title}</h2>
         <p class="text">${element.publisher}</p>
